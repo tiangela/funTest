@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Нямушка</title>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:100&amp;subset=cyrillic" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="main">
+      <div class="catalog">
+        <h1 class="catalog__title">Ты сегодня покормил кота?</h1>
+          <article class="item item--default">
+            <div class="item__card item__card--default">
+            <div class="item__text">
+              <p class="item__motto item__motto--active">Сказочное заморское яство</p>
+              <p class="item__motto item__motto--hover">Котэ не одобряет?</p>
+              <h2 class="item__title">Нямушка<br>
+              <span class="item__flavor">с фуа-гра</span>
+              </h2>
+              <ul class="item__list">
+                <li class="item__part-list"><span>10</span> порций</li>
+                <li class="item__part-list">мышь в подарок</li>
+              </ul>
+            </div>
+            <div class="item__weight">
+              <p class="item__weight-text">0,5 <span>кг</span></p>
+            </div>
+            </div>
+            <p class="item__order-text item__order-text--default">Чего сидишь? Порадуй котэ, <a href="order-page.html" class="item__order-link">купи.</a></p>
+            <p class="item__order-text item__order-text--selected">Печень утки разварная с артишоками.</p>
+            <p class="item__order-text item__order-text--disabled">Печалька, с фуа-гра закончился.</p>
+          </article>
+          <article class="item item--selected">
+            <div class="item__card item__card--selected">
+            <div class="item__text">
+              <p class="item__motto item__motto--active">Сказочное заморское яство</p>
+              <p class="item__motto item__motto--hover">Котэ не одобряет?</p>
+              <h2 class="item__title">Нямушка<br>
+              <span class="item__flavor">с рыбой</span>
+              </h2>
+              <ul class="item__list">
+                <li class="item__part-list"><span>40</span> порций</li>
+                <li class="item__part-list"><span>2</span> мыши в подарок</li>
+              </ul>
+            </div>
+            <div class="item__weight">
+              <p class="item__weight-text">2 <span>кг</span></p>
+            </div>
+            </div>
+            <p class="item__order-text item__order-text--default">Чего сидишь? Порадуй котэ, <a href="order-page.html" class="item__order-link">купи.</a></p>
+            <p class="item__order-text item__order-text--selected">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
+            <p class="item__order-text item__order-text--disabled">Печалька, с рыбой закончился.</p>
+          </article>
+          <article class="item item--disabled">
+            <div class="item__card item__card--disabled">
+            <div class="item__text">
+              <p class="item__motto item__motto--active">Сказочное заморское яство</p>
+              <p class="item__motto item__motto--hover">Котэ не одобряет?</p>
+              <h2 class="item__title">Нямушка<br>
+              <span class="item__flavor">с курой</span>
+              </h2>
+              <ul class="item__list">
+                <li class="item__part-list"><span>100</span> порций</li>
+                <li class="item__part-list"><span>5</span> мышей в подарок</li>
+                <li class="item__part-list">заказчик доволен</li>
+              </ul>
+            </div>
+            <div class="item__weight">
+              <p class="item__weight-text">5 <span>кг</span></p>
+            </div>
+            </div>
+            <p class="item__order-text item__order-text--default">Чего сидишь? Порадуй котэ, <a href="order-page.html" class="item__order-link">купи.</a></p>
+            <p class="item__order-text item__order-text--selected">Филе из цыплят с трюфелями в бульоне.</p>
+            <p class="item__order-text item__order-text--disabled">Печалька, с курой закончился.</p>
+          </article>
+      </div>
+  </main>
+  <script src="http://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
+  <script src="js/script.js">
+  </script>
+  <script>
+  
+  var catalogItems = Array.prototype.slice.call(document.querySelectorAll('.item'));
+
+  catalogItems.forEach(function(catalogItem) {
+    var item = catalogItem;
+    var btn = catalogItem.querySelector('.item__order-link');
+    var card = catalogItem.querySelector('.item__card');
+
+    card.addEventListener('click', function() {
+    if (item.classList.contains("item--disabled")) {
+      return false;
+    }
+    if (item.classList.contains("item--hover")) {
+      item.classList.remove("item--hover");
+      item.classList.add('item--selected');
+      card.classList.remove("item__card--hover");
+      card.classList.add('item__card--selected');
+    }
+    if (item.classList.contains("item--selected")) {
+      item.classList.remove("item--selected");
+      item.classList.add('item--default');
+      card.classList.remove("item__card--selected");
+      card.classList.add('item__card--default');
+    }
+    else {
+      item.classList.remove("item--default");
+      item.classList.add('item--selected');
+      card.classList.remove("item__card--default");
+      card.classList.add('item__card--selected');
+    }
+  });
+
+  btn.addEventListener('click', function() {
+    event.preventDefault();
+    event.stopPropagation();
+    if (item.classList.contains("item--disabled")) {
+      return false;
+    }
+    if (item.classList.contains("item--default")) {
+      item.classList.remove("item--default");
+      item.classList.add('item--selected');
+      card.classList.remove("item__card--default");
+      card.classList.add('item__card--selected');
+    }
+  });
+
+  card.addEventListener('mouseenter', function() {
+      if (card.classList.contains('item--default')) {
+        return false;
+      }
+      if (item.classList.contains('item--selected')) {
+        item.classList.remove('item--selected');
+        item.classList.add('item--hover');
+        card.classList.remove('item__card--selected');
+        card.classList.add('item__card--hover');
+      }
+    });
+
+    card.addEventListener('mouseleave', function() {
+      if (item.classList.contains('item--hover')) {
+        item.classList.remove('item--hover');
+        item.classList.add('item--selected');
+        card.classList.remove('item__card--hover');
+        card.classList.add('item__card--selected');
+      }
+    });
+  });
+  </script>
+</body>
+
+</html>

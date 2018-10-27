@@ -1,0 +1,23 @@
+.clearfix()
+{
+    &::after
+    {
+        display: table;
+        clear: both;
+
+        content: '';
+    }
+}
+
+.container()
+{
+    width: 326px;
+    @media @tablet-widths
+    {
+        width: 768px;
+    }
+    @media @desktop-widths
+    {
+        width: 1120px;
+    }
+}

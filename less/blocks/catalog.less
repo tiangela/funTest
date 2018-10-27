@@ -1,0 +1,28 @@
+.catalog {
+  display: flex;
+  margin-top: 20px;
+  .container();
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.catalog__title {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+
+@media @tablet-widths {
+  .catalog__title {
+    padding-bottom: 23px;
+  }
+
+
+}
+@media @desktop-widths {
+  .catalog {
+    justify-content: space-between;
+  }
+}
