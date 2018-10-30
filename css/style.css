@@ -207,7 +207,9 @@ body {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 45%), url('../img/pat-mini.jpg');
   background-repeat: repeat;
   background-position: center;
-  min-height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 img {
   max-width: 100%;
@@ -244,7 +246,6 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  padding-top: 100vh;
 }
 .main__title {
   text-align: center;
@@ -471,7 +472,6 @@ h2 {
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
-  margin-top: -100vh;
 }
 @media (min-width: 768px) {
   .catalog {
