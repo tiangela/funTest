@@ -233,9 +233,10 @@ h2 {
 .main {
   display: flex;
   width: 100%;
-  margin: 23px auto;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
+  margin-top: calc(50vh - 289px);
 }
 .main__title {
   text-align: center;
@@ -455,7 +456,6 @@ h2 {
 }
 .catalog {
   display: flex;
-  margin-top: 20px;
   width: 320px;
   justify-content: center;
   flex-wrap: wrap;
@@ -477,9 +477,6 @@ h2 {
   text-align: center;
 }
 @media (min-width: 768px) {
-  .catalog {
-    margin-top: 28px;
-  }
   .catalog__title {
     padding-bottom: 31px;
   }
