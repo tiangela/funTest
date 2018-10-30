@@ -208,9 +208,6 @@ body {
   background-repeat: repeat;
   background-position: center;
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 img {
   max-width: 100%;
@@ -247,6 +244,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  padding-top: 100vh;
 }
 .main__title {
   text-align: center;
@@ -469,10 +467,11 @@ h2 {
   width: 320px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 40px;
+  padding-top: 40px;
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
+  margin-top: -100vh;
 }
 @media (min-width: 768px) {
   .catalog {
@@ -501,7 +500,7 @@ h2 {
 }
 @media (min-width: 1120px) {
   .catalog {
+    padding-top: 0;
     justify-content: space-between;
-    margin-top: 0;
   }
 }
