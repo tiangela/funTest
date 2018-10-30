@@ -32,7 +32,7 @@ catalogItems.forEach(function(catalogItem) {
 
 btn.addEventListener('click', function(event) {
   event.preventDefault();
-  event.stopPropagation();
+  //event.stopPropagation();
   if (item.classList.contains("item--disabled")) {
     return false;
   }
@@ -41,12 +41,6 @@ btn.addEventListener('click', function(event) {
     item.classList.add('item--selected');
     card.classList.remove("item__card--default");
     card.classList.add('item__card--selected');
-  }
-  else {
-    item.classList.remove("item--selected");
-    item.classList.add('item--default');
-    card.classList.remove("item__card--selected");
-    card.classList.add('item__card--default');
   }
 });
 
