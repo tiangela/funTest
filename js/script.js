@@ -42,6 +42,12 @@ btn.addEventListener('click', function(event) {
     card.classList.remove("item__card--default");
     card.classList.add('item__card--selected');
   }
+  else {
+    item.classList.remove("item--selected");
+    item.classList.add('item--default');
+    card.classList.remove("item__card--selected");
+    card.classList.add('item__card--default');
+  }
 });
 
 card.addEventListener('mouseenter', function() {
