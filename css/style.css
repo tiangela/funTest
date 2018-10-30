@@ -336,7 +336,7 @@ h2 {
 .item__card--selected .item__weight {
   background-color: #d91667;
 }
-.item__card--hover:hover .item__weight {
+.item__card--hover .item__weight {
   background-color: #e62e7a;
 }
 .item__card--disabled .item__weight {
