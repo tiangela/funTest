@@ -32,7 +32,7 @@ catalogItems.forEach(function(catalogItem) {
 
 btn.addEventListener('click', function(event) {
   event.preventDefault();
-  //event.stopPropagation();
+  event.stopPropagation();
   if (item.classList.contains("item--disabled")) {
     return false;
   }
