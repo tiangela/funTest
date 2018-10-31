@@ -243,12 +243,20 @@ h2 {
   height: auto !important;
   min-height: 100%;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
 }
 .main__title {
   text-align: center;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .item {
   margin-bottom: 40px;
@@ -469,8 +477,6 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
   padding-top: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
   box-sizing: border-box;
 }
 @media (min-width: 768px) {
@@ -490,10 +496,6 @@ h2 {
   text-align: center;
 }
 @media (min-width: 768px) {
-  .catalog {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   .catalog__title {
     padding-bottom: 31px;
   }
